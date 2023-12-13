@@ -7,14 +7,17 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial()) {
     on<getLogin>((event, emit) async {
-      emit(loginLoaded());
+      emit(authLoaded());
       if (!(event.email == '' || event.password == '')) {
-        emit(loginLoading());
+        emit(authLoading());
         await Future.delayed(Duration(seconds: 1));
-        emit(loginsucces());
+        emit(authsucces());
       } else {
-        emit(loginError(error: 'username or password is wrong'));
+        emit(authError(error: 'username or password is wrong'));
       }
+    });
+    on<getSignup>((event, state) {
+      emit(authLoaded());
     });
   }
 }

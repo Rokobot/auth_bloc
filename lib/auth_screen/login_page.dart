@@ -1,5 +1,6 @@
 import 'package:auth_page/Bloc/bloc/auth_bloc.dart';
 import 'package:auth_page/Const/const.dart';
+import 'package:auth_page/auth_screen/sign_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,10 +25,10 @@ class _loginPageState extends State<loginPage> {
             if (state is AuthInitial) {
               return LoginPage(context);
             }
-            if (state is loginLoaded) {
+            if (state is authError) {
               return LoginPage(context);
             }
-            if (state is loginLoading) {
+            if (state is authLoading) {
               return Center(
                 child: CircularProgressIndicator(
                   color: Colors.red,
@@ -35,13 +36,13 @@ class _loginPageState extends State<loginPage> {
               );
             }
 
-            if (state is loginsucces) {
+            if (state is authsucces) {
               WidgetsBinding.instance.addPostFrameCallback((_) {
                 showSnackBar(context, 'succes');
               });
               return LoginPage(context);
             }
-            if (state is loginError) {
+            if (state is authError) {
               WidgetsBinding.instance.addPostFrameCallback((_) {
                 showSnackBar(context, state.error.toString());
               });
@@ -90,6 +91,15 @@ class _loginPageState extends State<loginPage> {
           },
           child: Text('login'),
         ),
+        SizedBox(
+          height: 30,
+        ),
+        GestureDetector(
+          child: Text('dont have an account?'),
+          onTap: () {
+            nextPage(context, signupPage());
+          },
+        )
       ],
     );
   }

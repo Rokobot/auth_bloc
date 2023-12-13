@@ -5,13 +5,13 @@ sealed class AuthState {}
 
 class AuthInitial extends AuthState {}
 
-class loginLoading extends AuthState {}
+class authLoading extends AuthState {}
 
-class loginLoaded extends AuthState {}
+class authLoaded extends AuthState {}
 
-class loginsucces extends AuthState {}
+class authsucces extends AuthState {}
 
-class loginError extends AuthState {
+class authError extends AuthState {
   String? error;
-  loginError({this.error});
+  authError({this.error});
 }
