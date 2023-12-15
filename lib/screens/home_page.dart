@@ -72,7 +72,8 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.green,
                 child: Text('Follow on Medium', style: TextStyle().style()),
                 onPressed: () async {
-                  final Uri url = Uri.parse('https://flutter.dev');
+                  final Uri url = Uri.parse(
+                      'https://medium.com/@alihasanov2023/bloc-state-managment-9b32b16dc2f1');
                   if (!await launchUrl(url)) {
                     throw Exception('Could not launch $url');
                   }
