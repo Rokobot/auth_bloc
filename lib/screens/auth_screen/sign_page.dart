@@ -1,5 +1,5 @@
 import 'package:auth_page/Bloc/bloc/auth_bloc.dart';
-import 'package:auth_page/Const/const.dart';
+import 'package:auth_page/const/const.dart';
 import 'package:auth_page/Const/widgets.dart';
 import 'package:auth_page/screens/auth_screen/login_page.dart';
 import 'package:auth_page/screens/home_page.dart';
