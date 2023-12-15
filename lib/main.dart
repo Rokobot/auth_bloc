@@ -1,5 +1,5 @@
 import 'package:auth_page/Bloc/bloc/auth_bloc.dart';
-import 'package:auth_page/auth_screen/login_page.dart';
+import 'package:auth_page/screens/auth_screen/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

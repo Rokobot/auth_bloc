@@ -15,5 +15,6 @@ class getSignup extends AuthEvent {
   String? email;
   String? password;
 
-  getSignup({this.username, this.email, this.password});
+  getSignup(
+      {required this.username, required this.email, required this.password});
 }

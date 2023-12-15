@@ -1,6 +1,8 @@
 import 'package:auth_page/Bloc/bloc/auth_bloc.dart';
 import 'package:auth_page/Const/const.dart';
-import 'package:auth_page/auth_screen/sign_page.dart';
+import 'package:auth_page/Const/widgets.dart';
+import 'package:auth_page/screens/auth_screen/sign_page.dart';
+import 'package:auth_page/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,9 +27,6 @@ class _loginPageState extends State<loginPage> {
             if (state is AuthInitial) {
               return LoginPage(context);
             }
-            if (state is authError) {
-              return LoginPage(context);
-            }
             if (state is authLoading) {
               return Center(
                 child: CircularProgressIndicator(
@@ -39,10 +38,11 @@ class _loginPageState extends State<loginPage> {
             if (state is authsucces) {
               WidgetsBinding.instance.addPostFrameCallback((_) {
                 showSnackBar(context, 'succes');
+                replaceNextPage(context, HomePage());
               });
               return LoginPage(context);
             }
-            if (state is authError) {
+            if (state is errorState) {
               WidgetsBinding.instance.addPostFrameCallback((_) {
                 showSnackBar(context, state.error.toString());
               });
@@ -61,23 +61,25 @@ class _loginPageState extends State<loginPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text('Login'),
+        Text(
+          'Login',
+          style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+        ),
         SizedBox(
           height: 20,
         ),
-        Container(
-          width: 200,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
           child: TextField(
             controller: emailController,
-            decoration: InputDecoration(hintText: 'email'),
+            decoration: TextFieldBorder(hintText: 'email'),
           ),
         ),
-        Container(
-          width: 200,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
           child: TextField(
-            controller: passwordController,
-            decoration: InputDecoration(hintText: 'password'),
-          ),
+              controller: passwordController,
+              decoration: TextFieldBorder(hintText: 'password')),
         ),
         SizedBox(
           height: 40,

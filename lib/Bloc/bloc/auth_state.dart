@@ -11,7 +11,7 @@ class authLoaded extends AuthState {}
 
 class authsucces extends AuthState {}
 
-class authError extends AuthState {
+class errorState extends AuthState {
   String? error;
-  authError({this.error});
+  errorState({required this.error});
 }

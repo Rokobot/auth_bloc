@@ -1,4 +1,4 @@
-import 'package:auth_page/auth_screen/login_page.dart';
+import 'package:auth_page/screens/auth_screen/login_page.dart';
 import 'package:flutter/material.dart';
 
 showSnackBar(context, error) {
