@@ -1,16 +1,10 @@
 # auth_page
 
-A new Flutter project.
+This is my Flutter porjet, i maked it with BloC state managment. You can see in my project more new technical about flutter and dart.
 
-## Getting Started
+thats screens from my app:
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot from 2023-12-15 17-26-41](https://github.com/Rokobot/auth_bloc/assets/117278851/d3d9b2be-11c6-4b82-b0a3-f23c5a8a2cdf)
+![Screenshot from 2023-12-15 17-26-37](https://github.com/Rokobot/auth_bloc/assets/117278851/9670a5ca-2dc7-42ee-bd17-b8b6bf6addc8)
+![Screenshot from 2023-12-15 17-22-45](https://github.com/Rokobot/auth_bloc/assets/117278851/8371e203-531a-43d7-925e-97def7e60cf6)
